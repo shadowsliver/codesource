@@ -1,4 +1,6 @@
 <?php
+$global_error = 1; //0 = false, 1 = true
+
 $global_language = "en"; //en, de, nl,...
 $global_pagetitle = "Default Website Title";
 $global_pagemeta = "Short description about this website";
