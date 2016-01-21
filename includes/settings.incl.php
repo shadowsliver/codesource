@@ -15,10 +15,11 @@ $global_stylesheets = array(
 
 /*scripts*/
 $global_javascript_top = array(
-    "js/jquery.min.js", "js/smoothScroll.js"
+    "js/html5shiv.js", "js/jquery.min.js", "js/smoothScroll.js"
 );
+//jquery 2.2.0
 
 /*scripts*/
 $global_javascript_bot = array(
-    "js/modernizr.min.js"
+    
 );
