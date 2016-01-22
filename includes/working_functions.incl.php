@@ -25,20 +25,12 @@ function safeNumberEU($number)
 function validateTelephone($phoneNumber)
 {
     $phoneNumber = preg_replace('/[^\d]/', '', $phoneNumber); //replaces none nummeric with nothing
-    if (preg_match('/^(0\d{10}|[1-9]\d{9})$/', $phoneNumber) and !empty($phoneNumber)) {
-        return true;
-    } else {
-        return false;
-    }
+    return preg_match('/^(0\d{10}|[1-9]\d{9})$/', $phoneNumber) and !empty($phoneNumber) ? true : false;
 }
 
 function validateEmail($email)
 {
-    if (preg_match('/([\w\-]+\@[\w\-]+\.[\w\-]+)/', $email) and !empty($email)) {
-        return true;
-    } else {
-        return false;
-    }
+    return preg_match('/([\w\-]+\@[\w\-]+\.[\w\-]+)/', $email) and !empty($email) ? true : false;
 }
 
 function validateStringSpaces($string)
@@ -53,17 +45,30 @@ function validateStringSpaces($string)
 
 function message_debug($message)
 {
-    $_SESSION['debugMessage'] = $_SESSION['debugMessage'] . '<br>' . $message;
+    if(!isset($_SESSION['debugMessage'])){
+        $_SESSION['debugMessage'] = '<br>' . $message;
+    }else{
+        $_SESSION['debugMessage'] .= '<br>' . $message;
+    }
+
 }
 
 function message_info($message)
 {
-    $_SESSION['infoMessage'] = $_SESSION['debugMessage'] . '<br>' . $message;
+    if(!isset($_SESSION['infoMessage'])){
+        $_SESSION['infoMessage'] = '<br>' . $message;
+    }else{
+        $_SESSION['infoMessage'] .= '<br>' . $message;
+    }
 }
 
 function message_error($message)
 {
-    $_SESSION['errorMessage'] = $_SESSION['debugMessage'] . '<br>' . $message;
+    if(!isset($_SESSION['errorMessage'])){
+        $_SESSION['errorMessage'] = '<br>' . $message;
+    }else{
+        $_SESSION['errorMessage'] .= '<br>' . $message;
+    }
 }
 
 function redirect($page)

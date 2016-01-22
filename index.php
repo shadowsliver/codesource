@@ -7,6 +7,7 @@ if(!empty($_GET['page'])){
 }else{
     redirect("index.php?page=$page");
 }
+$derps = $dot;
 
 include_once 'includes/html_top.incl.php';
 include_once 'view/'. $page .'.php';
