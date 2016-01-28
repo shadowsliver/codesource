@@ -1,7 +1,7 @@
 <?php
 include 'includes/session.incl.php';
 include 'includes/settings.incl.php';
-include 'includes/working_functions.incl.php';
+
 
 //Error Messaging
 if($global_error == 1){

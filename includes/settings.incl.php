@@ -1,27 +1,9 @@
 <?php
-$global_error = 1; //0 = false, 1 = true
+//0 = false, 1 = true
+$global_error = 1;
 
-$global_language = "en"; //en, de, nl,...
-$global_pagetitle = "Default Website Title";
-$global_pagemeta = "Short description about this website";
-$global_creators = "Michel Michaux";
-$global_copyright = '&#169; Michel Michaux - <a href="http://www.shadowsliver.be/">http://www.shadowsliver.be/</a>';
-$global_domain = "@shadowsliver.be";
-$global_emails = array("info" => "info" . $global_domain, "help" => "help" . $global_domain, "contact" => "michaux.michel" . $global_domain);
-
-
-/*Stylesheets*/
-$global_stylesheets = array(
-    "style.css"
-);
-
-/*scripts*/
-$global_javascript_top = array(
-    "js/html5shiv.js", "js/jquery.min.js", "js/smoothScroll.js"
-);
-//jquery 2.2.0
-
-/*scripts*/
-$global_javascript_bot = array(
-    
-);
+//db info
+$global_servername = "localhost";
+$global_dbUser = "user";
+$global_dbPass = "password";
+$global_dbName = "db_name";

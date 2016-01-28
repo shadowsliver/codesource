@@ -1,5 +1,8 @@
 <?php
 include_once 'includes/config.incl.php';
+include_once 'model/Properties.php';
+include_once 'includes/working_functions.incl.php';
+$properties = New Properties();
 $page = 'home';
 
 if(!empty($_GET['page'])){
@@ -7,9 +10,5 @@ if(!empty($_GET['page'])){
 }else{
     redirect("index.php?page=$page");
 }
-$derps = $dot;
 
-include_once 'includes/html_top.incl.php';
-include_once 'view/'. $page .'.php';
-//include_once 'view/openjava.php';
-include_once 'includes/html_bot.incl.php';
+include_once 'templates/page.tpl.php';

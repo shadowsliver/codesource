@@ -7,8 +7,6 @@ $pages_name = array(
     "Home", "About us"
 );
 
-$page = $_GET['page'];
-
 
 ?>
 
