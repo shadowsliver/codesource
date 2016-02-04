@@ -2,29 +2,29 @@
 
 class Properties
 {
-    public $language = "en"; //en, de, nl,...
-    public $pagetitle = "Default Website Title";
-    public $pagemeta = "Short description about this website";
+    public $language = "nl"; //en, de, nl,...
+    public $pagetitle = "untitled";
+    public $pagemeta = "Website from Michel Michaux";
 
 
     /*Stylesheets*/
     public $stylesheets = array(
-        "style.css"
+
     );
 
-    /*scripts top of page*/
+    /*scripts top of page - local files need /js/ to support CDN links*/
     public $javascript_top = array(
-        "js/html5shiv.js", "js/jquery.min.js", "js/smoothScroll.js"
+
     );
-    //jquery 2.2.0
 
     /*scripts bottom of page*/
     public $javascript_bot = array(
 
     );
 
-
-    //extra
-    public $creator = "Michel Michaux";
-    public $copyright = '&#169; Michel Michaux - <a href="http://www.shadowsliver.be/">http://www.shadowsliver.be/</a>';
+    public function __construct($lang, $title)
+    {
+        $this->language = $lang;
+        $this->pagetitle = $title;
+    }
 }
