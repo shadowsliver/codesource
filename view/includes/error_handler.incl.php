@@ -1,6 +1,16 @@
 <?php
 function myErrorHandler($errno, $errstr, $errfile, $errline)
 {
+
+    function message_debug($message)
+    {
+        if(!isset($_SESSION['debugMessage'])){
+            $_SESSION['debugMessage'] = '<br>' . $message;
+        }else{
+            $_SESSION['debugMessage'] .= '<br>' . $message;
+        }
+    }
+
     if (!(error_reporting() & $errno)) {
         return;
     }

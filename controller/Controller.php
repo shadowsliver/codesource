@@ -1,24 +1,40 @@
 <?php
 include_once './model/DBConn.php';
 include_once './model/Properties.php';
+include_once './model/Functions.php';
 
-class StockManagementController
+class Controller
 {
-    public $product;
-    public $properties;
+    private $db;
+    private $properties;
+    private $functions;
 
     public function __construct()
     {
-        $this->product = new DBConn("shadow1q_dev", "Shadow2401", "shadow1q_devstock");
-        //$this->product = new DBConn("root", "root", "vooraad");
-        $this->properties = new Properties("nl", "Stock Management");
-        $this->handler();
+        //$this->db = new DBConn("shadow1q_dev", "Shadow2401", "shadow1q_devstock");
+        //$this->db = new DBConn("root", "root", "vooraad");
+        $this->properties = new Properties("nl", "Page Title");
+        $this->functions = new Functions();
+        $this->Handler();
     }
 
-    public function handler(){
-        $isChangeSubmitted = isset($_POST['keuze']);
-        if($isChangeSubmitted){
-            $this->product->UpdateProduct($_POST['keuze']);
-        }
+    public function Handler(){
+
+    }
+
+    public function GetDebugging(){
+        return $this->properties->debugging;
+    }
+
+    public function GetProperties(){
+        return $this->properties;
+    }
+
+    public function CallFunction(){
+        return $this->functions;
+    }
+
+    public function GetDatabase(){
+        return $this->db;
     }
 }

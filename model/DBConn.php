@@ -6,6 +6,7 @@ class DBConn
     private $user;
     private $password;
     private $databaseName;
+    private $port;
     private $conn;
 
     public function __construct($user, $password, $databaseName)
@@ -13,6 +14,7 @@ class DBConn
         $this->user = $user;
         $this->password = $password;
         $this->databaseName = $databaseName;
+        $this->port = $port;
         $this->CreateConnection();
     }
 
@@ -22,9 +24,9 @@ class DBConn
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // geeft fouten in sql weer
     }
 
-    public function GetProduct()
+    public function GetAllRecords($table)
     {
-        $sql = "SELECT * FROM oneplusone WHERE product_id=1";
+        $sql = "SELECT * FROM $table WHERE $table"."_id=1";
         $statement = $this->conn->prepare($sql);
         $statement->execute();
         $product = $statement-> fetchObject();
@@ -32,12 +34,9 @@ class DBConn
         return $product;
     }
 
-    public function UpdateProduct($input){
-        if($input == "yes"){
-            $sql="UPDATE oneplusone SET product_bought = product_bought + 1 WHERE product_id=1";
-        }else if($input == 'no'){
-            $sql="UPDATE oneplusone SET product_bought = product_bought - 1 WHERE product_id=1";
-        }
+    public function UpdateRecord($input, $output, $table){
+        $sql="UPDATE $table SET $input = $output WHERE $table"."_id=1";
+
         $statement = $this->conn->prepare($sql);
         $statement->execute();
     }
