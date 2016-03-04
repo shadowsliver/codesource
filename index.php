@@ -1,15 +1,15 @@
 <?php
-include_once 'view/includes/config.incl.php';
+include_once 'config/config.php';
 $page = 'home'; // de 'index' pagina
 
 $controller->GetProperties()->stylesheets =  array(
     "style.css"
 );
 $controller->GetProperties()->javascript_top = array(
-    "js/html5shiv.js"
+    "assets/js/html5shiv.js"
 );
 $controller->GetProperties()->javascript_bot = array(
-    "js/jquery.min.js", "js/bootstrap.min.js"
+    "assets/javascript/jquery.min.js", "assets/javascript/bootstrap.min.js"
 );
 
 if(!empty($_GET['page'])){

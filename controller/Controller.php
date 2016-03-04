@@ -1,5 +1,5 @@
 <?php
-include_once './model/DBConn.php';
+include_once './model/db/DBConnection_mysql.php';
 include_once './model/Properties.php';
 include_once './model/Functions.php';
 
@@ -11,9 +11,8 @@ class Controller
 
     public function __construct()
     {
-        //$this->db = new DBConn("shadow1q_dev", "Shadow2401", "shadow1q_devstock");
-        //$this->db = new DBConn("root", "root", "vooraad");
-        $this->properties = new Properties("nl", "Page Title");
+        //$this->db = new DBConnection("root", "root", "vooraad");
+        $this->properties = new Properties("nl", "Default Page Title", 1);
         $this->functions = new Functions();
         $this->Handler();
     }

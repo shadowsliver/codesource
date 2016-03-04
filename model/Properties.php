@@ -4,7 +4,7 @@ class Properties
 {
     public $language = "nl"; //en, de, nl,...
     public $pagetitle = "untitled";
-    public $pagemeta = "Website from Michel Michaux";
+    public $pagemeta = "Website by Michel Michaux";
     public $debugging = 1;
 
 
@@ -23,9 +23,10 @@ class Properties
 
     );
 
-    public function __construct($lang, $title)
+    public function __construct($lang, $title, $debugging)
     {
         $this->language = $lang;
         $this->pagetitle = $title;
+        $this->debugging = $debugging;
     }
 }
